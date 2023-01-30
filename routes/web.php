@@ -19,5 +19,6 @@ Route::get('/', function () {
 
 
 
-Route::get('/paytabs_payment', 'PaytabsController@index')->name('Paytabs.index');
-Route::post('/paytabs_response', 'PaytabsController@response')->name('Paytabs.result');
+Route::get('/paytap',[\App\Http\Controllers\PaytabsController::class,'paytap'])->name('paytap');
+Route::get('/paytap_home',[\App\Http\Controllers\PaytabsController::class,'paytap_home'])->name('paytap_home');
+Route::get('/return_paytap',[\App\Http\Controllers\PaytabsController::class,'return_paytap'])->name('return_paytap');

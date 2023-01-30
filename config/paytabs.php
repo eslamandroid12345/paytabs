@@ -1,33 +1,61 @@
 <?php
+
+/*
+ * This file is part of paytabs.
+ *
+ * (c) Walaa Elsaeed <w.elsaeed@paytabs.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 return [
 
-    ####################################
-    //  merchant Information
-    ####################################
-    "merchant_email" => env('merchant_email','eslamemo457@gmail.com'),
+    /*
+     |--------------------------------------------------------------------------
+     | Merchant profile id
+     |--------------------------------------------------------------------------
+     |
+     | Your merchant profile id , you can find the profile id on your PayTabs Merchant’s Dashboard- profile.
+     |
+     */
 
-    "merchant_secretKey" => env('merchant_secretKey','SKJNHTL6N9-JGTDJ2DBB9-B69NTD62KB'),
-    "profile_id" => 112528,
+    'profile_id' => env('paytabs_profile_id', '112528'),
 
-    ####################################
-    //  Website Information
-    ####################################
+    /*
+   |--------------------------------------------------------------------------
+   | Server Key
+   |--------------------------------------------------------------------------
+   |
+   | You can find the Server key on your PayTabs Merchant’s Dashboard - Developers - Key management.
+   |
+   */
 
-    'currency' => "EGP",
-    //Currency of the amount stated. 3 character ISO currency code
+    'server_key' => env('paytabs_server_key', 'SKJNHTL6N9-JGTDJ2DBB9-B69NTD62KB'),
 
-    "msg_lang" => "en",
-    //Language of the PayPage to be created. Invalid or blank entries will default to English.(Englsh/Arabic)
+    /*
+   |--------------------------------------------------------------------------
+   | Currency
+   |--------------------------------------------------------------------------
+   |
+   | The currency you registered in with PayTabs account
+     you must pass value from this array ['AED','EGP','SAR','OMR','JOD','US']
+   |
+   */
 
-    "site_url" => env('APP_URL'), //should be like that in local => 'http://localhost:8000'
-    //The requesting website be exactly the same as the website/URL associated with your PayTabs Merchant Account
-
-    'return_url' => env('APP_URL') . "/paytabs_response", //should be like that in local => 'http://localhost:8000/paytabs_response'
-
-    "cms_with_version" => "API USING PHP",
-
-    "paypage_info" => "1"
+    'currency' => env('paytabs_currency', 'EGP'),
 
 
+    /*
+   |--------------------------------------------------------------------------
+   | Region
+   |--------------------------------------------------------------------------
+   |
+   | The region you registered in with PayTabs
+     you must pass value from this array ['ARE','EGY','SAU','OMN','JOR','GLOBAL']
+   |
+   */
+
+    'region' => env('paytabs_region', 'EGY'),
 
 ];
